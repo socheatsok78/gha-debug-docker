@@ -1,0 +1,15 @@
+name: GitHub Action Debugging for Docker
+description: Debugging GitHub Actions that use Docker containers
+inputs:
+  github:
+    description: GitHub context object
+    default: ${{ toJson(github) }}
+  job:
+    description: GitHub job context object
+    default: ${{ toJson(job) }}
+  runner:
+    description: GitHub runner context object
+    default: ${{ toJson(runner) }}
+runs:
+  using: docker
+  image: Dockerfile
